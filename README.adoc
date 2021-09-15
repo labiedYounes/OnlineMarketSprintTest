@@ -1,7 +1,6 @@
 # OnlineMarket
 
-##Secutrity (Oauth):
-Oauth was implemented using [Spring Tutorial](https://spring.io/guides/tutorials/spring-boot-oauth2/)
+## this project is based on [Spring Tutorial](https://spring.io/guides/tutorials/spring-boot-oauth2/) and [Github](https://github.com/spring-guides/tut-spring-boot-oauth2)
 
 ##Note:
  make sure to add the following variables to your launch configuration : githubClientId, githubClientSecret,googleClientSecret,googleClientId
