@@ -16,15 +16,16 @@ public class UserService extends AbstractService<User> {
     }
 
     public User update(User user){
-        Optional<User> optOldUser = mainRepository.findById(user.getId());
+        if(user.getId() !=null){
+            Optional<User> optOldUser = mainRepository.findById(user.getId());
+            if(optOldUser.isPresent()){
+                User oldUser = optOldUser.get();
 
-        if(optOldUser.isPresent()){
-            User oldUser = optOldUser.get();
-
-            oldUser.setFullname(user.getFullname()) ;
-            oldUser.setEmail(user.getEmail()) ;
-            oldUser.setLocale(user.getLocale()); ;
-            return ((User) mainRepository.save(oldUser));
+                oldUser.setFullname(user.getFullname()) ;
+                oldUser.setEmail(user.getEmail()) ;
+                oldUser.setLocale(user.getLocale()); ;
+                return ((User) mainRepository.save(oldUser));
+            }
         }
         return ((User) mainRepository.save(user));
     }

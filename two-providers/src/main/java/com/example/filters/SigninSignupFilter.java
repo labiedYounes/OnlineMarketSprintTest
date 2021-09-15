@@ -1,6 +1,7 @@
 package com.example.filters;
 
 import com.example.models.User;
+import com.example.services.AbstractService;
 import com.example.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
@@ -15,26 +16,31 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.GenericFilterBean;
 import javax.servlet.*;
 import javax.servlet.annotation.*;
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.Date;
 
 //@WebFilter(filterName = OAuth2LoginAuthenticationFilter.DEFAULT_FILTER_PROCESSES_URI)
 public class SigninSignupFilter extends GenericFilterBean {
 
-    @Autowired
-    private UserService userService;
+    private AbstractService userService;
+    public SigninSignupFilter(AbstractService abstractService){
+        super();
+        this.userService = abstractService;
+    }
     public void destroy() {
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        OAuth2User principal = ((OAuth2AuthenticationToken) authentication).getPrincipal();
-        User user = new User(principal.getAttribute("fullname"),
-                             principal.getAttribute("email"),
-                             principal.getAttribute("locale"),
-                             new Date());
-        userService.update(user);
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            OAuth2User principal = ((OAuth2AuthenticationToken) authentication).getPrincipal();
+            //todo: create 2 adaptors to handle the different idp response formats
+            User user = new User(principal.getAttribute("fullname"),
+                    principal.getAttribute("email"),
+                    principal.getAttribute("locale"),
+                    new Date());
+            userService.update(user);
         chain.doFilter(request, response);
     }
 

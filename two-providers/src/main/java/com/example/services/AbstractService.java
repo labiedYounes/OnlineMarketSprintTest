@@ -2,6 +2,8 @@ package com.example.services;
 
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.ArrayList;
+
 
 public class AbstractService<T> {
 
@@ -26,4 +28,6 @@ public class AbstractService<T> {
     public T get(Long entityId){
         return (T) this.mainRepository.findById(entityId);
     }
+
+    public ArrayList<T> findAll(){ return (ArrayList<T>) this.mainRepository.findAll(); }
 }

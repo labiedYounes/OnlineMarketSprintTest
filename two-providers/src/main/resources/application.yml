@@ -1,5 +1,5 @@
 spring:
- security:
+  security:
    oauth2:
      client:
        registration:
@@ -9,3 +9,7 @@ spring:
          google:
            client-id: ${googleClientId}
            client-secret: ${googleClientSecret}
+
+  jpa:
+    hibernate:
+      ddl-auto: update

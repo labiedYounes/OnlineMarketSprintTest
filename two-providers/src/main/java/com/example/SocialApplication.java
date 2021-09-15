@@ -16,10 +16,14 @@
 package com.example;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
 import com.example.filters.SigninSignupFilter;
+import com.example.models.User;
+import com.example.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;
@@ -38,10 +42,15 @@ import javax.servlet.http.HttpServletRequest;
 @SpringBootApplication
 @RestController
 public class SocialApplication extends WebSecurityConfigurerAdapter {
-
+    @Autowired
+	private UserService userService;
 	@RequestMapping("/user")
 	public OAuth2User user(@AuthenticationPrincipal OAuth2User principal, HttpServletRequest request) {
 		return principal;
+	}
+	@RequestMapping("/users")
+	public ArrayList<User> user() {
+		return userService.findAll();
 	}
 
 	@Override

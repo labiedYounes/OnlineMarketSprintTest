@@ -1,13 +1,16 @@
 package com.example.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
-@Entity
+@Entity(name="shopper")
 public class User {
 
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String fullname;
     private String email;
@@ -19,6 +22,10 @@ public class User {
         this.email = email;
         this.locale = locale;
         this.last_login = last_login;
+    }
+
+    public User() {
+
     }
 
     public Date getLast_login() {
