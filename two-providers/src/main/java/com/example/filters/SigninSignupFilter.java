@@ -23,8 +23,8 @@ import java.util.Date;
 //@WebFilter(filterName = OAuth2LoginAuthenticationFilter.DEFAULT_FILTER_PROCESSES_URI)
 public class SigninSignupFilter extends GenericFilterBean {
 
-    private AbstractService userService;
-    public SigninSignupFilter(AbstractService abstractService){
+    private UserService userService;
+    public SigninSignupFilter(UserService abstractService){
         super();
         this.userService = abstractService;
     }
@@ -36,10 +36,7 @@ public class SigninSignupFilter extends GenericFilterBean {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             OAuth2User principal = ((OAuth2AuthenticationToken) authentication).getPrincipal();
             //todo: create 2 adaptors to handle the different idp response formats
-            User user = new User(principal.getAttribute("fullname"),
-                    principal.getAttribute("email"),
-                    principal.getAttribute("locale"),
-                    new Date());
+            User user = userService.getUserFromPrincipal(principal);
             userService.update(user);
         chain.doFilter(request, response);
     }

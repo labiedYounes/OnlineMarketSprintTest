@@ -1,10 +1,8 @@
 package com.example.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity(name="shopper")
 public class User {
@@ -16,6 +14,22 @@ public class User {
     private String email;
     private String locale;
     private Date last_login;
+    @OneToMany
+    private Set<Product> products;
+
+    @OneToMany(fetch=FetchType.LAZY)
+    private Set<Review> reviews;
+
+    @OneToMany(fetch=FetchType.LAZY)
+    private Set<Bill> bills;
+
+    public Set<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(Set<Review> reviews) {
+        this.reviews = reviews;
+    }
 
     public User(String fullname, String email, String locale, Date last_login) {
         this.fullname = fullname;
@@ -67,5 +81,21 @@ public class User {
 
     public Long getId() {
         return id;
+    }
+
+    public Set<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
+    }
+
+    public Set<Bill> getBills() {
+        return bills;
+    }
+
+    public void setBills(Set<Bill> bills) {
+        this.bills = bills;
     }
 }
