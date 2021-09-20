@@ -21,7 +21,7 @@ public class ReviewController {
 	public ArrayList<Review> reviews(){
 		return reviewService.findAll();
 	}
-	@GetMapping(value = "/{id]")
+	@GetMapping(value = "/{id}")
 	public Review find(@PathVariable Long id){
 		return reviewService.get(id);
 	}
