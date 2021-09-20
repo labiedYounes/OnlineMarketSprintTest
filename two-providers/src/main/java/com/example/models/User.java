@@ -14,7 +14,7 @@ public class User {
     private String email;
     private String locale;
     private Date last_login;
-    @OneToMany
+    @OneToMany()
     private Set<Product> products;
 
     @OneToMany(fetch=FetchType.LAZY)

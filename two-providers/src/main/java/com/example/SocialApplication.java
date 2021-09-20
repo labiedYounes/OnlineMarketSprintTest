@@ -40,18 +40,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 
 @SpringBootApplication
-@RestController
 public class SocialApplication extends WebSecurityConfigurerAdapter {
-    @Autowired
-	private UserService userService;
-	@RequestMapping("/user")
-	public OAuth2User user(@AuthenticationPrincipal OAuth2User principal, HttpServletRequest request) {
-		return principal;
-	}
-	@RequestMapping("/users")
-	public ArrayList<User> user() {
-		return userService.findAll();
-	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
