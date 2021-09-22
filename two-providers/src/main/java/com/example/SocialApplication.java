@@ -34,9 +34,10 @@ import org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationF
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 
 @SpringBootApplication
@@ -45,7 +46,7 @@ public class SocialApplication extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		// @formatter:off
-		http
+		http.csrf().disable()
 			.authorizeRequests(a -> a
 				.antMatchers("/", "/error", "/webjars/**").permitAll()
 				.anyRequest().authenticated()
@@ -53,18 +54,18 @@ public class SocialApplication extends WebSecurityConfigurerAdapter {
 			.exceptionHandling(e -> e
 				.authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
 			)
-			.csrf(c -> c
-				.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-			)
 			.logout(l -> l
 				.logoutSuccessUrl("/").permitAll()
 			)
 			.oauth2Login();
+
 		// @formatter:on
 	}
+
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(SocialApplication.class, args);
 	}
-
 }
+

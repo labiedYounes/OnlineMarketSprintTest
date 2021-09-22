@@ -13,3 +13,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+
+server:
+  error:
+    whitelabel:
+      enabled: false
