@@ -2,7 +2,8 @@ package com.example.services;
 
 import com.example.models.User;
 import com.example.repositories.UserRepository;
-import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.data.repository.CrudRepository;
+//import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -11,7 +12,10 @@ import java.util.Map;
 import java.util.Optional;
 @Service
 public class UserService extends AbstractService<User> {
-    private Map<String, AuthenticationProviderMapper> authProviderToUserMap =new HashMap<String,AuthenticationProviderMapper>() {{
+    public UserService(UserRepository mainRepository) {
+        super(mainRepository);
+    }
+    /*private Map<String, AuthenticationProviderMapper> authProviderToUserMap =new HashMap<String,AuthenticationProviderMapper>() {{
 
         put("google",  principal -> new User(principal.getAttribute("name"), principal.getAttribute("email"),
                                              principal.getAttribute("locale"), new Date()));
@@ -55,7 +59,7 @@ public class UserService extends AbstractService<User> {
 
     interface AuthenticationProviderMapper{
         User getUser(OAuth2User principal);
-    }
+    }*/
 
 }
 

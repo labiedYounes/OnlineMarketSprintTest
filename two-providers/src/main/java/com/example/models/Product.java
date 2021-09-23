@@ -31,6 +31,7 @@ public class Product {
 
     private float price;
     //@ElementCollection not the best thing
+    //TODO: should be multiple image URLs but just one for now
     private String imgs;
     private int quantity;
 

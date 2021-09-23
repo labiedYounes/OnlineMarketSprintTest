@@ -36,6 +36,7 @@ import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.cors.CorsConfiguration;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
@@ -46,7 +47,7 @@ public class SocialApplication extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		// @formatter:off
-		http.csrf().disable()
+		/*http.csrf().disable()
 			.authorizeRequests(a -> a
 				.antMatchers("/", "/error", "/webjars/**").permitAll()
 				.anyRequest().authenticated()
@@ -57,8 +58,11 @@ public class SocialApplication extends WebSecurityConfigurerAdapter {
 			.logout(l -> l
 				.logoutSuccessUrl("/").permitAll()
 			)
-			.oauth2Login();
+			.oauth2Login();*/
 
+		http.csrf().disable().authorizeRequests(a -> a
+				.antMatchers("/**").permitAll()
+		).cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
 		// @formatter:on
 	}
 
