@@ -1,0 +1,44 @@
+### categories
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 2",\n  "description": "clothes 2"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 3",\n  "description": "clothes 3"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 4",\n  "description": "clothes 4"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 5",\n  "description": "clothes 5"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 6",\n  "description": "clothes 6"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 7",\n  "description": "clothes 7"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 8",\n  "description": "clothes 8"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 9",\n  "description": "clothes 9"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 10",\n  "description": "clothes 10"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 11",\n  "description": "clothes 11"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 12",\n  "description": "clothes 12"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 13",\n  "description": "clothes 13"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 14",\n  "description": "clothes 14"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 15",\n  "description": "clothes 15"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 16",\n  "description": "clothes 16"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 17",\n  "description": "clothes 17"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 18",\n  "description": "clothes 18"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 19",\n  "description": "clothes 19"\n}'  --compressed
+curl 'http://localhost:8080/categories/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "name": "clothes 20",\n  "description": "clothes 20"\n}'  --compressed
+
+### users
+curl 'http://localhost:8080/users/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "fullname": "OB1",\n  "email": "ob1@gmail.com",\n  "locale": "en",\n  "last_login": "2021-09-24T00:10:50.947Z"\n}'  --compressed
+curl 'http://localhost:8080/users/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "fullname": "OB2",\n  "email": "ob2@gmail.com",\n  "locale": "en",\n  "last_login": "2021-09-24T00:10:50.947Z"\n}'  --compressed
+curl 'http://localhost:8080/users/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "fullname": "OB3",\n  "email": "ob3@gmail.com",\n  "locale": "en",\n  "last_login": "2021-09-24T00:10:50.947Z"\n}'  --compressed
+curl 'http://localhost:8080/users/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "fullname": "OB4",\n  "email": "ob4@gmail.com",\n  "locale": "en",\n  "last_login": "2021-09-24T00:10:50.947Z"\n}'  --compressed
+curl 'http://localhost:8080/users/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "fullname": "OB5",\n  "email": "ob5@gmail.com",\n  "locale": "en",\n  "last_login": "2021-09-24T00:10:50.947Z"\n}'  --compressed
+curl 'http://localhost:8080/users/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "fullname": "OB6",\n  "email": "ob6@gmail.com",\n  "locale": "en",\n  "last_login": "2021-09-24T00:10:50.947Z"\n}'  --compressed
+
+### products
+curl 'http://localhost:8080/products/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "name": "prod 1",\n  "description": "prod 1",\n  "userId": 1,\n  "categoryId": 1,\n  "imgs": "http://localhost:8080/images/1.png",\n  "quantity": 1,\n  "price": 10\n}' --compressed
+curl 'http://localhost:8080/products/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "name": "prod 2",\n  "description": "prod 2",\n  "userId": 1,\n  "categoryId": 2,\n  "imgs": "http://localhost:8080/images/2.png",\n  "quantity": 1,\n  "price": 10\n}' --compressed
+curl 'http://localhost:8080/products/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "name": "prod 3",\n  "description": "prod 3",\n  "userId": 1,\n  "categoryId": 3,\n  "imgs": "http://localhost:8080/images/3.png",\n  "quantity": 1,\n  "price": 10\n}' --compressed
+curl 'http://localhost:8080/products/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "name": "prod 4",\n  "description": "prod 4",\n  "userId": 1,\n  "categoryId": 4,\n  "imgs": "http://localhost:8080/images/4.png",\n  "quantity": 1,\n  "price": 10\n}' --compressed
+curl 'http://localhost:8080/products/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "name": "prod 5",\n  "description": "prod 5",\n  "userId": 1,\n  "categoryId": 5,\n  "imgs": "http://localhost:8080/images/5.png",\n  "quantity": 1,\n  "price": 10\n}' --compressed
+curl 'http://localhost:8080/products/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "name": "prod 6",\n  "description": "prod 6",\n  "userId": 1,\n  "categoryId": 6,\n  "imgs": "http://localhost:8080/images/6.png",\n  "quantity": 1,\n  "price": 10\n}' --compressed
+curl 'http://localhost:8080/products/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "name": "prod 7",\n  "description": "prod 7",\n  "userId": 1,\n  "categoryId": 2,\n  "imgs": "http://localhost:8080/images/7.png",\n  "quantity": 1,\n  "price": 10\n}' --compressed
+curl 'http://localhost:8080/products/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "name": "prod 8",\n  "description": "prod 8",\n  "userId": 1,\n  "categoryId": 3,\n  "imgs": "http://localhost:8080/images/8.png",\n  "quantity": 1,\n  "price": 10\n}' --compressed
+curl 'http://localhost:8080/products/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "name": "prod 9",\n  "description": "prod 9",\n  "userId": 1,\n  "categoryId": 4,\n  "imgs": "http://localhost:8080/images/9.png",\n  "quantity": 1,\n  "price": 10\n}' --compressed
+curl 'http://localhost:8080/products/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "name": "prod 10",\n  "description": "prod 10",\n  "userId": 1,\n  "categoryId": 2,\n  "imgs": "http://localhost:8080/images/1.png",\n  "quantity": 1,\n  "price": 10\n}' --compressed
+curl 'http://localhost:8080/products/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "name": "prod 11",\n  "description": "prod 11",\n  "userId": 1,\n  "categoryId": 3,\n  "imgs": "http://localhost:8080/images/2.png",\n  "quantity": 1,\n  "price": 10\n}' --compressed
+curl 'http://localhost:8080/products/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "name": "prod 12",\n  "description": "prod 12",\n  "userId": 1,\n  "categoryId": 4,\n  "imgs": "http://localhost:8080/images/3.png",\n  "quantity": 1,\n  "price": 10\n}' --compressed
+curl 'http://localhost:8080/products/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "name": "prod 13",\n  "description": "prod 13",\n  "userId": 1,\n  "categoryId": 5,\n  "imgs": "http://localhost:8080/images/4.png",\n  "quantity": 1,\n  "price": 10\n}' --compressed
+curl 'http://localhost:8080/products/'  -H 'Content-Type: application/json'  --data-raw $'{\n  "id": 0,\n  "name": "prod 14",\n  "description": "prod 14",\n  "userId": 1,\n  "categoryId": 6,\n  "imgs": "http://localhost:8080/images/5.png",\n  "quantity": 1,\n  "price": 10\n}' --compressed
