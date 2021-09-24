@@ -30,6 +30,18 @@ public class Product {
     }
 
     private float price;
+
+    public Product(String name, String description, float price, String imgs, int quantity) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.imgs = imgs;
+        this.quantity = quantity;
+    }
+    public Product(){
+
+    }
+
     //@ElementCollection not the best thing
     //TODO: should be multiple image URLs but just one for now
     private String imgs;

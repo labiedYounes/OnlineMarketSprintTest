@@ -1,6 +1,6 @@
 package com.example.DTOs;
 
-public class User {
+public class UserDTO {
     private Long id;
     private String fullname;
     private String email;

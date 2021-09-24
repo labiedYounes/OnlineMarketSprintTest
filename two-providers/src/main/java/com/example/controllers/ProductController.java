@@ -1,5 +1,6 @@
 package com.example.controllers;
 
+import com.example.DTOs.ProductDTO;
 import com.example.models.Product;
 import com.example.models.Product;
 import com.example.services.ProductService;
@@ -17,28 +18,28 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping(value = "/")
-    public ArrayList<Product> products(){
-        return productService.findAll();
+    public ArrayList<ProductDTO> products() {
+        return productService.getDTOList();
     }
 
     @GetMapping(value = "/{id}")
-    public Product find(@PathVariable Long id){
-        return productService.get(id);
+    public ProductDTO find(@PathVariable Long id) {
+        return productService.getDTO(id);
     }
 
-    @PostMapping(value="/")
-    public Product create(@RequestBody Product product){
-        return productService.create(product);
+    @PostMapping(value = "/")
+    public ProductDTO create(@RequestBody ProductDTO product) {
+        return productService.createDTO(product);
     }
 
-    @PutMapping(value="/{id}")
-    public Product update(@PathVariable Long id, @RequestBody Product product){
+    @PutMapping(value = "/{id}")
+    public Product update(@PathVariable Long id, @RequestBody ProductDTO product) {
         product.setId(id);
         return productService.update(product);
     }
 
-    @DeleteMapping(value="/{id}")
-    public ResponseEntity<?> delete(@PathVariable Long id){
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id) {
         productService.delete(id);
         return new ResponseEntity<Product>(HttpStatus.NO_CONTENT);
     }

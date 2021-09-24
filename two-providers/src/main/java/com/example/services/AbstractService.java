@@ -26,7 +26,7 @@ public class AbstractService<T> {
     }
 
     public T get(Long entityId){
-        return (T) this.mainRepository.findById(entityId);
+        return (T) (this.mainRepository.findById(entityId).get());
     }
 
     public ArrayList<T> findAll(){ return (ArrayList<T>) this.mainRepository.findAll(); }
